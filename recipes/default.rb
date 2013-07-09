@@ -46,6 +46,7 @@ Array(node[:nginx_conf][:confs]).each do |site|
       server_name conf['server_name']
       socket conf['socket']
       template conf['template']
+      site_type conf['site_type']
       ssl conf['ssl']
     end
   end
