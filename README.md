@@ -1,12 +1,12 @@
+[![Build Status](https://travis-ci.org/firebelly/chef-nginx_conf.png)](https://travis-ci.org/firebelly/chef-nginx_conf)
 #Description#
 
 Manage nginx server configuration files.
 
 
 #Requirements#
- 
- * Nginx recipe.
- * Ubuntu/Debian
+ * Chef >= 11.0
+ * Nginx cookbook
 
 
 #Attributes#
@@ -99,9 +99,8 @@ Removes the symlink and deletes the configuration:
 
 #Testing#
 
-We use kitchen-test to check basic functionality.  To run tests:
+We use foodcritic and chefspec to check basic functionality.  To run tests:
 
     bundle install
-    kitchen test
-
-NOTE: This will download a vagrant basebox for Ubuntu 10.04 and setup vagrant at test/kitchen/.kitchen
+    berks install
+    strainer test
