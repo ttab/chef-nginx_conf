@@ -1,3 +1,4 @@
+default[:nginx_conf][:confds] = {}
 default[:nginx_conf][:confs] = []
 default[:nginx_conf][:listen] = '80'
 default[:nginx_conf][:pre_socket] = 'http://unix:'
