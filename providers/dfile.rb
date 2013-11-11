@@ -8,7 +8,7 @@ action :create do
     variables(
       :block =>  new_resource.block
     )
-    notifies :run, new_resource.reload
+    notifies :restart, 'service[nginx]', new_resource.reload
   end
 end
 action :delete do
