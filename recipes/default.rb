@@ -64,9 +64,13 @@ end
 
 (node[:nginx_conf][:confds]).each do |file,options|
   conf = {
+    'conf_name' => nil,
+    'reload' => nil,
     'block' => nil
   }.merge(options)
   nginx_conf_dfile file do
     block conf['block']
+    reload conf['reload']
+    conf_name conf['conf_name']
   end
 end
