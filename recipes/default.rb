@@ -62,7 +62,9 @@ Array(node[:nginx_conf][:confs]).each do |site|
   end
 end
 
-(node[:nginx_conf][:confds]).each do |file,options|
+confds = {}.merge(node[:nginx_conf][:confds])
+
+confds.each do |file,options|
   conf = {
     'conf_name' => nil,
     'reload' => nil,
