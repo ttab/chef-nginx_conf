@@ -66,7 +66,7 @@ end
   conf = {
     'block' => nil
   }.merge(options)
-  nginx_conf_d_file file do
+  nginx_conf_dfile file do
     block conf['block']
   end
 end
