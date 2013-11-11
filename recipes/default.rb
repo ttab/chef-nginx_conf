@@ -61,3 +61,12 @@ Array(node[:nginx_conf][:confs]).each do |site|
     end
   end
 end
+
+(node[:nginx_conf][:confds]).each do |file,options|
+  conf = {
+    'block' => nil
+  }.merge(options)
+  nginx_conf_d_file file do
+    block conf['block']
+  end
+end
